@@ -6,12 +6,11 @@ import datetime
 
 # 1. SETUP CONNECTIONS
 # Cloudinary credentials configuration
-cloudinary.config(
-    cloud_name = st.secrets["CLOUDINARY_CLOUD_NAME"],
-    api_key = st.secrets["CLOUDINARY_API_KEY"],
-    api_secret = st.secrets["CLOUDINARY_API_SECRET"],
-    secure = True
-)
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+if CLOUDINARY_URL:
+    cloudinary.config(cloudinary_url=CLOUDINARY_URL)
+    print("cloudi... con...estblsh..")
+
 
 # MongoDB connection initialization
 client = MongoClient(st.secrets["MONGODB_URI"])
