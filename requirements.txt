@@ -1,4 +1,5 @@
 streamlit
+os
 cloudinary
 pymongo
 dnspython
